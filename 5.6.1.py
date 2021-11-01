@@ -38,49 +38,32 @@ def ask():
 
         return x, y
 
+def if_win(symb):
+    if symb == ['X', 'X', 'X']:
+        print("Выиграл X")
+        return True
+    if symb == ["O", "O", "O"]:
+        print("Выиграл O")
+        return True
+    
 def chek():
    for i in range(3):
         symb = []
+        symb1 = []
         for j in range(3):
             symb.append(field[i][j])
-        if symb == ['X', 'X', 'X']:
-            print("Выиграл X")
-            return True
-        if symb == ["O", "O", "O"]:
-            print("Выиграл O")
-            return True
-
-    for i in range(3):
-        symb = []
-        for j in range(3):
-            symb.append(field[j][i])
-        if symb == ['X', 'X', 'X']:
-            print("Выиграл X")
-            return True
-        if symb == ["O", "O", "O"]:
-            print("Выиграл O")
-            return True
+            symb1.append(field[j][i])
+        if_win(symb)
+        if_win(symb1)
 
     symb = []
+    symb1 = []
     for i in range(3):
         symb.append(field[i][i])
-    if symb == ['X', 'X', 'X']:
-        print("Выиграл X")
-        return True
-    if symb == ["O", "O", "O"]:
-        print("Выиграл O")
-        return True
-
-    symb = []
-    for i in range(3):
-        symb.append(field[i][2-i])
-    if symb == ['X', 'X', 'X']:
-        print("Выиграл X")
-        return True
-    if symb == ["O", "O", "O"]:
-        print("Выиграл O")
-        return True
-
+        symb1r.append(field[i][2-i])
+    if_win(symb)
+    if_win(symb1)
+    
     return False
 
 num=0
